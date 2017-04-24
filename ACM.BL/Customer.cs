@@ -14,7 +14,7 @@ namespace ACM.BL
 
         }
 
-        //Constructor for Customer with customerId as the parameter
+        //Constructor overload for Customer
         public Customer(int customerId)
         {
             //'this' refers to the current instance of the customer object being used
@@ -45,46 +45,28 @@ namespace ACM.BL
                 //Adding in logic to test for whether ',' is needed if first or last name is empty (For automated testing code to pass)
                 string fullname = FirstName;
                 //If the last name is populated
-                if(!string.IsNullOrWhiteSpace(LastName))
+                if (!string.IsNullOrWhiteSpace(LastName))
+                {
+                    //If the first name is populated
+                    if (!string.IsNullOrWhiteSpace(fullname))
                     {
-                        //If the first name is populated
-                        if(!string.IsNullOrWhiteSpace(fullname))
-                            {
-                                //Add a comma after it
-                                fullname += ", ";
-                            }
-                            //Now add the Last name
-                            fullname += LastName;
+                        //Add a comma after it
+                        fullname += ", ";
                     }
+                    //Now add the Last name
+                    fullname += LastName;
+                }
 
                 //Return the fullname - First Name + Last Name
                 return fullname;
             }
         }
 
-        //Method 'Save' to save the defined customer
-        public bool Save()
-        {
-            return true;
-        }
-
-        //Method to retrieve A SPECIFIC customer - Using the customerId as a parameter
-        public Customer Retrieve(int customerId)
-        {
-            return new Customer();
-        }
-
-        //Second Retrieve Method that returns a LIST of customers
-        public List<Customer> Retrieve()
-        {
-            return new List<Customer>();
-        }
-
         //Method 'Validate' to make sure name is valid
         public bool Validate()
         {
             var isValid = true;
-            
+
             //If either first or last names are empty then validation will fail
             if (string.IsNullOrWhiteSpace(FirstName)) isValid = false;
             if (string.IsNullOrWhiteSpace(EmailAddress)) isValid = false;
