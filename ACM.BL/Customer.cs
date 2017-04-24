@@ -9,9 +9,10 @@ namespace ACM.BL
     public class Customer
     {
         //Constructor for Customer Class
-        public Customer ()
+        public Customer()
+            : this(0)//Constructor chanining
         {
-
+            
         }
 
         //Constructor overload for Customer
@@ -19,7 +20,11 @@ namespace ACM.BL
         {
             //'this' refers to the current instance of the customer object being used
             this.CustomerId = customerId;
+            AddressList = new List<Address>();
         }
+
+        //Addresss
+        public List<Address> AddressList { get; set; }
 
         //Static variable declaration for instance count
         public static int InstanceCount { get; set; }

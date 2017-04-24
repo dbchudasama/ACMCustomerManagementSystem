@@ -21,9 +21,12 @@ namespace ACM.BL
             this.OrderId = orderId;
         }
 
+        public int CustomerId { get; set; }
+        public int ShippingAddressId { get; set; }
         //Nullable value type. Using DateTimeOffset as this is very useful in calculating offsets for different time zones for different countries. Can get the time in local time.
         public DateTimeOffset? OrderDate { get; set; }
         public int OrderId { get; private set; }
+        public List<OrderItem> orderItems { get; set; }
 
         //Method 'Validate' to validate the order data
         public bool Validate()

@@ -8,9 +8,18 @@ namespace ACM.BL
 {
     public class CustomerRepository
     {
-        //Method 'Save' to save the defined customer
-        public bool Save()
+        //Private as no access to this
+        private AddressRepository addressRepository { get; set; }
+       
+        public CustomerRepository()
         {
+            addressRepository = new AddressRepository();
+        }
+
+        //Method 'Save' to save the defined customer. Outlines a collaboration relationship.
+        public bool Save(Customer customer)
+        {
+            //Saves the defined customer
             return true;
         }
 
@@ -18,6 +27,8 @@ namespace ACM.BL
         public Customer Retrieve(int customerId)
         {
             Customer customer = new Customer(customerId);
+            //Creating address list for the customer. Collaborative relationship between the Customer and Address Repository
+            customer.AddressList = addressRepository.RetrieveByCustomerId(customerId).ToList();
 
             //Temporary hard coded values to return a populated customer
             if (customerId == 1)
