@@ -6,8 +6,14 @@ using System.Threading.Tasks;
 
 namespace ACM.BL
 {
-    public class OrderItem
+    public class OrderItem : EntityBase
     {
+        public int OrderItemId { get; private set; }
+        public int OrderQuantity { get; set; }
+        public int ProductId { get; set; }
+        //Nullable value type
+        public decimal? PurchasePrice { get; set; }
+
         //Constructor
         public OrderItem()
         {
@@ -20,16 +26,24 @@ namespace ACM.BL
             this.OrderItemId = orderItemId;
         }
 
-        public int OrderItemId { get; private set; }
-        public int OrderQuantity { get; set; }
-        public int ProductId { get; set; }
-        //Nullable value type
-        public decimal? PurchasePrice { get; set; }
-
         //Method 'Save' to save the order item
-        public bool Save()
+        public bool Save(OrderItem orderItem)
         {
-            return true;
+            var success = true;
+
+            //If the product has not changed and is not valid then it won't save
+            if(orderItem.HasChanges && orderItem.IsValid)
+            {
+                if (orderItem.IsNew)
+                {
+                    //Call an Insert Stored Procedure
+                }
+                else
+                {
+                    //Call an Update Stored Procedure
+                }
+            }
+            return success;
         }
 
         //Method to retrieve A SPECIFIC Order Item - Using the orderItemId as a parameter
@@ -38,19 +52,13 @@ namespace ACM.BL
             return new OrderItem();
         }
 
-        //Method 'Validate' to validate the order data
-        public bool Validate()
+        //Method 'Validate' to validate the order data. Overiding from baase class
+        public override bool Validate()
         {
-            var isValid = true;
-
             //If the order quantity is less than 0 then validation will fail
-            if (OrderQuantity <= 0) isValid = false;
             //If the product ID is less than 0 then validation will fail
-            if (ProductId <= 0) isValid = false;
             //If the purchase price is null or empty then validation will fail
-            if (PurchasePrice == null) isValid = false;
-
-            return isValid;
+            return (OrderQuantity <= 0 || ProductId <= 0 || PurchasePrice == null) ? false : true;
         }
     }
 }

@@ -6,25 +6,29 @@ using System.Threading.Tasks;
 
 namespace ACM.BL
 {
-    public class Customer
+    public class Customer : EntityBase
     {
-        //Constructor for Customer Class
-        public Customer()
-            : this(0)//Constructor chanining
-        {
-            
-        }
+        //Private as no access to this
+        private AddressRepository addressRepository { get; set; }
 
-        //Constructor overload for Customer
-        public Customer(int customerId)
+        //Constructor overloaading for Customer Class
+        public Customer()
+            //: this(0)//Constructor chanining
         {
+            //New Guid (Mixed character and digit number) allocation
+            this.ID = Guid.NewGuid();
+
             //'this' refers to the current instance of the customer object being used
-            this.CustomerId = customerId;
+            //this.CustomerId = customerId;
             AddressList = new List<Address>();
+            addressRepository = new AddressRepository();
         }
 
         //Addresss
         public List<Address> AddressList { get; set; }
+
+        //Customer type variable
+        public int CustomerType { get; set; }
 
         //Static variable declaration for instance count
         public static int InstanceCount { get; set; }
@@ -40,7 +44,7 @@ namespace ACM.BL
         
         //Customer ID property - Here limiting the set command so that only I can set this property. No code outside this class can set this property
         //as this is a key property
-        public int CustomerId { get; private set; }
+       // public int CustomerId { get; private set; }
 
         //Fullname of customer. No setter only a getter as nothing should be able to change the value of this property
         public string FullName
@@ -68,7 +72,7 @@ namespace ACM.BL
         }
 
         //Method 'Validate' to make sure name is valid
-        public bool Validate()
+        public override bool Validate()
         {
             var isValid = true;
 
@@ -78,6 +82,16 @@ namespace ACM.BL
 
             return isValid;
 
+        }
+
+        //Method to create a customer - Using the customerId as a parameter
+        public void CreateCustomer(Customer c)
+        {
+                //Building customer
+                EmailAddress = "divyesh@me.com";
+                FirstName = "Divyesh";
+                LastName = "Chudasama";
+                AddressList = addressRepository.RetrieveByCustomerId(c).ToList();
         }
     }
 }

@@ -8,10 +8,24 @@ namespace ACM.BL
 {
     public class ProductRepository
     {
-        //Method 'Save' to save the defined product
-        public bool Save()
+        //Method 'Save' to save the defined product   
+        public bool Save(Product product)
         {
-            return true;
+            var success = true;
+
+            //If the product has not changed and is not valid then it won't save
+            if (product.HasChanges && product.IsValid)
+            {
+                if (product.IsNew)
+                {
+                    //Call an Insert Stored Procedure
+                }
+                else
+                {
+                    //Call an Update Stored Procedure
+                }
+            }
+            return success;
         }
 
         //Method to retrieve A SPECIFIC product - Using the productId as a parameter
@@ -23,7 +37,7 @@ namespace ACM.BL
             //Temporary hard coded values to return a product
             if (productId == 2)
             {
-                //Building customer
+                //Building product
                 product.ProductName = "Snapback";
                 product.ProductDescription = "DC Batman Snapback Cap. Black and Grey.";
                 product.CurrentPrice = 40;

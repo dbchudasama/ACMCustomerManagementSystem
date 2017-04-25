@@ -82,6 +82,7 @@ namespace ACM.BLTest
             Assert.AreEqual(3, Customer.InstanceCount);
         }
 
+        /*
         [TestMethod]
 
         public void ValidateValid()
@@ -100,7 +101,9 @@ namespace ACM.BLTest
             Assert.AreEqual(expected, actual);
 
         }
+        */
 
+        /*
         [TestMethod]
 
         public void ValidateMissingFirstName()
@@ -118,5 +121,6 @@ namespace ACM.BLTest
             Assert.AreEqual(expected, actual);
 
         }
+        */
     }
 }

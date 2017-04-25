@@ -8,41 +8,34 @@ namespace ACM.BL
 {
     public class CustomerRepository
     {
-        //Private as no access to this
-        private AddressRepository addressRepository { get; set; }
-       
-        public CustomerRepository()
+        //Method 'Save' to save the defined customer
+        private void Save(Customer c)
         {
-            addressRepository = new AddressRepository();
+            c.Save(); //Invoking Save Method
         }
 
-        //Method 'Save' to save the defined customer. Outlines a collaboration relationship.
-        public bool Save(Customer customer)
+        //Create Customer 
+         void CreateCustomer(Customer c)
         {
-            //Saves the defined customer
-            return true;
+            c.CreateCustomer(c); //Invoking Create Customer Method
+
         }
 
-        //Method to retrieve A SPECIFIC customer - Using the customerId as a parameter
-        public Customer Retrieve(int customerId)
+        //Load Customer
+        public Customer LoadCustomer(Customer c)
         {
-            Customer customer = new Customer(customerId);
-            //Creating address list for the customer. Collaborative relationship between the Customer and Address Repository
-            customer.AddressList = addressRepository.RetrieveByCustomerId(customerId).ToList();
-
-            //Temporary hard coded values to return a populated customer
-            if (customerId == 1)
-            {
-                //Building customer
-                customer.EmailAddress = "divyesh@me.com";
-                customer.FirstName = "Divyesh";
-                customer.LastName = "Chudasama";
-            }
-            return customer;
+            return c;
         }
 
-        //Second Retrieve Method that returns a LIST of customers
-        public List<Customer> Retrieve()
+        //Load ALL Customers
+        //Return a list of all Customers
+        public static List<Customer> LoadAllCustomers()
+        {
+            return new List<Customer>();
+        }
+
+        //Load a selected number of customers 
+        public static List<Customer> LoadManyCustomers(string filter)
         {
             return new List<Customer>();
         }

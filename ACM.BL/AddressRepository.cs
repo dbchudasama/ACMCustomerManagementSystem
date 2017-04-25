@@ -23,7 +23,7 @@ namespace ACM.BL
         }
 
         //Return a sequence of Data aas the customer may have more than 1 address
-        public IEnumerable<Address> RetrieveByCustomerId(int customerId)
+        public IEnumerable<Address> RetrieveByCustomerId(Customer customer)
         {
             return new List<Address>()
             {

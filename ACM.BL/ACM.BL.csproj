@@ -42,14 +42,21 @@
   <ItemGroup>
     <Compile Include="Address.cs" />
     <Compile Include="AddressRepository.cs" />
+    <Compile Include="Class1.cs" />
     <Compile Include="Customer.cs" />
     <Compile Include="CustomerRepository.cs" />
+    <Compile Include="EntityBase.cs" />
     <Compile Include="Order.cs" />
+    <Compile Include="OrderDisplay.cs" />
+    <Compile Include="OrderDisplayItem.cs" />
     <Compile Include="OrderItem.cs" />
     <Compile Include="OrderRepository.cs" />
     <Compile Include="Product.cs" />
     <Compile Include="ProductRepository.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="s\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

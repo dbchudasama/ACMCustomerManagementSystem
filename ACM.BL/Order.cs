@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace ACM.BL
 {
-    public class Order
+    public class Order : EntityBase
     {
         //Constrctor for Order Class
         public Order()
@@ -28,8 +28,8 @@ namespace ACM.BL
         public int OrderId { get; private set; }
         public List<OrderItem> orderItems { get; set; }
 
-        //Method 'Validate' to validate the order data
-        public bool Validate()
+        //Method 'Validate' to validate the order data. Overidding from base class
+        public override bool Validate()
         {
             var isValid = true;
 

@@ -6,8 +6,14 @@ using System.Threading.Tasks;
 
 namespace ACM.BL
 {
-    public class Product
+    public class Product : EntityBase //Inheritance
     {
+        //Nullable value type. 
+        public Decimal? CurrentPrice { get; set; }
+        public int ProductId { get; private set; }
+        public string ProductDescription { get; set; }
+        public string ProductName { get; set; }
+
         //Constructor for Product Class
         public Product()
         {
@@ -21,14 +27,8 @@ namespace ACM.BL
             this.ProductId = productId;
         }
 
-        //Nullable value type. 
-        public Decimal? CurrentPrice { get; set; }
-        public int ProductId { get; private set; }
-        public string ProductDescription { get; set; }
-        public string ProductName { get; set; }
-
-        //Method 'Validate' to validate the product data
-        public bool Validate()
+        //Method 'Validate' to validate the product data. Overidding method from base class
+        public override bool Validate()
         {
             var isValid = true;
 
@@ -39,5 +39,7 @@ namespace ACM.BL
             
             return isValid;
         }
+
+        
     }
 }
