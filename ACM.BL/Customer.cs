@@ -74,14 +74,8 @@ namespace ACM.BL
         //Method 'Validate' to make sure name is valid
         public override bool Validate()
         {
-            var isValid = true;
-
             //If either first or last names are empty then validation will fail
-            if (string.IsNullOrWhiteSpace(FirstName)) isValid = false;
-            if (string.IsNullOrWhiteSpace(EmailAddress)) isValid = false;
-
-            return isValid;
-
+            return (string.IsNullOrWhiteSpace(FirstName) || string.IsNullOrWhiteSpace(EmailAddress)) ? false : true;
         }
 
         //Method to create a customer - Using the customerId as a parameter

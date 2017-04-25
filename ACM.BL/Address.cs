@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace ACM.BL
 {
-    public class Address
+    public class Address : EntityBase
     {
         public int AddressId { get; private set; }
         public int AddressType { get; set; }
@@ -28,6 +28,10 @@ namespace ACM.BL
             this.AddressId = addressId;
         }
 
-        
+        public override bool Validate()
+        {
+            //Simple Test to to validate address. Here the post code is needed for the address otherwise will fail the check. 
+            return (string.IsNullOrEmpty(PostalCode)) ? false : true;
+        }
     }
 }
