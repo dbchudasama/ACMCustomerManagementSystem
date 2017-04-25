@@ -85,7 +85,7 @@ namespace ACM.BL
                 EmailAddress = "divyesh@me.com";
                 FirstName = "Divyesh";
                 LastName = "Chudasama";
-                AddressList = addressRepository.RetrieveByCustomerId(c).ToList();
+                AddressList = addressRepository.LoadCustomerAddress(c).ToList();
         }
     }
 }

@@ -8,22 +8,14 @@ namespace ACM.BL
 {
     public class AddressRepository
     {
-        public Address Retrieve(int addressId)
+        //Method to save current address
+        private void Save(Address address)
         {
-            //Creating the instance of the Address class. Passing in the Requested Id
-            return new Address()
-            {
-                //Temporary hard coded values to return a populated address
-                StreetLine1 = "Durham Road",
-                City = "Loughborough",
-                State = "Leicestershire",
-                Country = "UK",
-                PostalCode = "ABCDEF"
-            };
+            address.Save(); //Invoking Save Method
         }
 
-        //Return a sequence of Data aas the customer may have more than 1 address
-        public IEnumerable<Address> RetrieveByCustomerId(Customer customer)
+        //Return a sequence of Data as the customer may have more than 1 address.
+        public IEnumerable<Address> LoadCustomerAddress(Customer customer)
         {
             return new List<Address>()
             {
@@ -48,13 +40,5 @@ namespace ACM.BL
                         PostalCode = "ABBCCD"
                     }
             };
-
         }
-
-        //Method to return current address
-        public bool Save(Address address)
-        {
-            return true;
-        }
-    }
 }

@@ -33,5 +33,20 @@ namespace ACM.BL
             //Simple Test to to validate address. Here the post code is needed for the address otherwise will fail the check. 
             return (string.IsNullOrEmpty(PostalCode)) ? false : true;
         }
+
+        public Address CreateAddress(int addressType)
+        {
+            //Creating the instance of the Address class. Passing in the Requested Id
+            return new Address()
+            {
+                //Temporary hard coded values to return a populated address
+                AddressType = 1,
+                StreetLine1 = "Durham Road",
+                City = "Loughborough",
+                State = "Leicestershire",
+                Country = "UK",
+                PostalCode = "ABCDEF"
+            };
+        }
     }
 }

@@ -15,7 +15,7 @@ namespace ACM.BL
         }
 
         //Create Customer 
-         void CreateCustomer(Customer c)
+        public void CreateCustomer(Customer c)
         {
             c.CreateCustomer(c); //Invoking Create Customer Method
 
