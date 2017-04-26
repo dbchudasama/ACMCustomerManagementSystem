@@ -34,19 +34,34 @@ namespace ACM.BL
             return (string.IsNullOrEmpty(PostalCode)) ? false : true;
         }
 
-        public Address CreateAddress(int addressType)
+        //Return a sequence of Data as the customer may have more than 1 address.
+        public List<Address> CreateAddress(Address a)
         {
-            //Creating the instance of the Address class. Passing in the Requested Id
-            return new Address()
-            {
-                //Temporary hard coded values to return a populated address
-                AddressType = 1,
-                StreetLine1 = "Durham Road",
-                City = "Loughborough",
-                State = "Leicestershire",
-                Country = "UK",
-                PostalCode = "ABCDEF"
-            };
+            return new List<Address>() {new Address()
+                                            {
+                                                //Temporary hard coded values to return a set of addresses for a customer
+                                                AddressType = 1,
+                                                StreetLine1 = "Durham Road",
+                                                City = "Loughborough",
+                                                State = "Lesicestershire",
+                                                Country = "UK",
+                                                PostalCode = "ABCDEF",
+                                            },
+
+                                            new Address()
+
+                                            {
+
+                                                //Temporary hard coded values to return a set of addresses for a customer
+                                                AddressType = 2,
+                                                StreetLine1 = "Rendell Streeet",
+                                                City = "Loughborough",
+                                                State = "Leicestershire",
+                                                Country = "UK",
+                                                PostalCode = "ABBCCD"
+                                            }
+
+                                        };
         }
     }
 }

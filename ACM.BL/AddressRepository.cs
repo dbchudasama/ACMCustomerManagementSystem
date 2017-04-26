@@ -14,31 +14,30 @@ namespace ACM.BL
             address.Save(); //Invoking Save Method
         }
 
-        //Return a sequence of Data as the customer may have more than 1 address.
-        public IEnumerable<Address> LoadCustomerAddress(Customer customer)
+        //Method to Create Address
+        public void CreateAddress(Address a)
         {
-            return new List<Address>()
-            {
-                 new Address(1)
-                    {
-                        //Temporary hard coded values to return a set of addresses for a customer
-                        AddressType = 1,
-                        StreetLine1 = "Durham Road",
-                        City = "Loughborough",
-                        State = "Lesicestershire",
-                        Country = "UK",
-                        PostalCode = "ABCDEF"
-                    },
-                 new Address(2)
-                    {
-                        //Temporary hard coded values to return a set of addresses for a customer
-                        AddressType = 2,
-                        StreetLine1 = "Rendell Streeet",
-                        City = "Loughborough",
-                        State = "Leicestershire",
-                        Country = "UK",
-                        PostalCode = "ABBCCD"
-                    }
-            };
+            var a2 = new Address();
+            a2.CreateAddress(a); //Invoking the Create Address method
         }
+
+        //Load Address Method
+        public Address LoadCustomerAddress(Address a)
+        {
+            return a;
+        }
+
+        //Load ALL Addresses
+        //Return a list of all Addresses
+        public static List<Address> LoadAllAddresses()
+        {
+            return new List<Address>();
+        }
+
+        //Load a selected number of addresses 
+        public static List<Address> LoadManyAddresses(string filter)
+        {
+            return new List<Address>();
+        }
+    }
 }

@@ -26,6 +26,9 @@ namespace ACM.BL
 
         //Addresss
         public List<Address> AddressList { get; set; }
+        
+        //Customer ID variable
+        public int CustomerId { get; set; }
 
         //Customer type variable
         public int CustomerType { get; set; }
@@ -81,11 +84,14 @@ namespace ACM.BL
         //Method to create a customer - Using the customerId as a parameter
         public void CreateCustomer(Customer c)
         {
-                //Building customer
-                EmailAddress = "divyesh@me.com";
-                FirstName = "Divyesh";
-                LastName = "Chudasama";
-                AddressList = addressRepository.LoadCustomerAddress(c).ToList();
+            //Building customer
+            CustomerId = 1;
+            CustomerType = 1; //Here customer type refers to 'Business', 'Government', 'Standard' etc. Assume here 1 means 'Standard'
+            EmailAddress = "divyesh@me.com";
+            FirstName = "Divyesh";
+            LastName = "Chudasama";
+            //AddressList = addressRepository.LoadCustomerAddress(c).ToList();
+            AddressList = new List<Address>();
         }
     }
 }
