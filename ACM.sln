@@ -9,6 +9,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tests", "Tests", "{8AF576F3
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ACM.BLTest", "ACM.BLTest\ACM.BLTest.csproj", "{02A62CF2-BDAD-40EB-913D-CE1F51D94FF9}"
 EndProject
+Project("{00D1A9C2-B5F0-4AF3-8072-F6C62B433612}") = "ACMDatabaseDemo", "ACMDatabaseDemo\ACMDatabaseDemo.sqlproj", "{541D4BD1-30E6-4824-BD3C-5E63B863F3C7}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -23,6 +25,12 @@ Global
 		{02A62CF2-BDAD-40EB-913D-CE1F51D94FF9}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{02A62CF2-BDAD-40EB-913D-CE1F51D94FF9}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{02A62CF2-BDAD-40EB-913D-CE1F51D94FF9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{541D4BD1-30E6-4824-BD3C-5E63B863F3C7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{541D4BD1-30E6-4824-BD3C-5E63B863F3C7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{541D4BD1-30E6-4824-BD3C-5E63B863F3C7}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
+		{541D4BD1-30E6-4824-BD3C-5E63B863F3C7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{541D4BD1-30E6-4824-BD3C-5E63B863F3C7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{541D4BD1-30E6-4824-BD3C-5E63B863F3C7}.Release|Any CPU.Deploy.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
