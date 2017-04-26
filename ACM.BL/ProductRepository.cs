@@ -9,27 +9,13 @@ namespace ACM.BL
     public class ProductRepository
     {
         //Method 'Save' to save the defined product   
-        public bool Save(Product product)
+        public void Save(Product p)
         {
-            var success = true;
-
-            //If the product has not changed and is not valid then it won't save
-            if (product.HasChanges && product.IsValid)
-            {
-                if (product.IsNew)
-                {
-                    //Call an Insert Stored Procedure
-                }
-                else
-                {
-                    //Call an Update Stored Procedure
-                }
-            }
-            return success;
+            p.Save(); //Invoking the Save method on Product
         }
 
         //Method to retrieve A SPECIFIC product - Using the productId as a parameter
-        public Product Retrieve(int productId)
+        public Product LoadProduct(int productId)
         {
             //Create the instance of the product class. Pass in the requested Id.
             Product product = new Product(productId);
@@ -45,8 +31,15 @@ namespace ACM.BL
             return product;
         }
 
-        //Second Retrieve Method that returns a LIST of products
-        public List<Product> Retrieve()
+        //Load ALL Products
+        //Return a list of all Products
+        public static List<Product> LoadAllProducts()
+        {
+            return new List<Product>();
+        }
+
+        //Load a selected number of products 
+        public static List<Product> LoadManyProducts(string filter)
         {
             return new List<Product>();
         }

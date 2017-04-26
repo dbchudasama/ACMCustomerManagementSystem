@@ -9,27 +9,13 @@ namespace ACM.BL
     public class OrderRepository
     {
         //Method 'Save' to save the order
-        public bool Save(Order order)
+        public void Save(Order order)
         {
-            var success = true;
-
-            //If the order has not changed and is not valid then it won't save
-            if (order.HasChanges && order.IsValid)
-            {
-                if (order.IsNew)
-                {
-                    //Call an Insert Stored Procedure
-                }
-                else
-                {
-                    //Call an Update Stored Procedure
-                }
-            }
-            return success;
+            order.Save(); //Invoking Save method on Order
         }
 
         //Method to retrieve the defined order
-        public OrderDisplay RetrieveOrderDisplay(int orderId)
+        public OrderDisplay LoadOrderDisplay(int orderId)
         {
             OrderDisplay orderDisplay = new OrderDisplay();
 
@@ -38,7 +24,7 @@ namespace ACM.BL
             {
                 orderDisplay.FirstName = "Divyesh";
                 orderDisplay.LastName = "Chudasama";
-                orderDisplay.OrderDate = new DateTimeOffset(2017, 4, 25, 10, 00, 00, new TimeSpan(2,0,0));
+                orderDisplay.OrderDate = new DateTimeOffset(2017, 4, 25, 10, 00, 00, new TimeSpan(2, 0, 0));
                 orderDisplay.ShippingAddress = new Address()
                 {
                     AddressType = 1,
@@ -49,7 +35,7 @@ namespace ACM.BL
                     PostalCode = "ABCDEF"
                 };
             }
-            
+
             //Creating an instance of the order display item list
             orderDisplay.orderDisplayItemList = new List<OrderDisplayItem>();
 
@@ -79,7 +65,7 @@ namespace ACM.BL
         }
 
         //Method to retrieve A SPECIFIC Order - Using the orderId as a parameter
-        public Order Retrieve(int orderId)
+        public Order Load(int orderId)
         {
             //Creating the new instance of the Order class. Pass in requested Id.
             Order order = new Order(orderId);

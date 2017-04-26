@@ -14,12 +14,6 @@ namespace ACM.BL
         //Nullable value type
         public decimal? PurchasePrice { get; set; }
 
-        //Constructor
-        public OrderItem()
-        {
-
-        }
-
         //Constructor overload for orderItem
         public OrderItem(int orderItemId)
         {
@@ -27,29 +21,15 @@ namespace ACM.BL
         }
 
         //Method 'Save' to save the order item
-        public bool Save(OrderItem orderItem)
+        public void Save(OrderItem o)
         {
-            var success = true;
-
-            //If the product has not changed and is not valid then it won't save
-            if(orderItem.HasChanges && orderItem.IsValid)
-            {
-                if (orderItem.IsNew)
-                {
-                    //Call an Insert Stored Procedure
-                }
-                else
-                {
-                    //Call an Update Stored Procedure
-                }
-            }
-            return success;
+            o.Save(); //Invoking Save method from Base Class
         }
 
         //Method to retrieve A SPECIFIC Order Item - Using the orderItemId as a parameter
-        public OrderItem Retrieve(int orderItemId)
+        public OrderItem LoadOrderItem(int orderItemId)
         {
-            return new OrderItem();
+            return this;
         }
 
         //Method 'Validate' to validate the order data. Overiding from baase class

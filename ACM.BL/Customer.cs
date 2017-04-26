@@ -82,7 +82,7 @@ namespace ACM.BL
         }
 
         //Method to create a customer - Using the customerId as a parameter
-        public void CreateCustomer(Customer c)
+        public Customer CreateCustomer(Customer c)
         {
             //Building customer
             CustomerId = 1;
@@ -92,6 +92,8 @@ namespace ACM.BL
             LastName = "Chudasama";
             //AddressList = addressRepository.LoadCustomerAddress(c).ToList();
             AddressList = new List<Address>();
+
+            return c;
         }
     }
 }

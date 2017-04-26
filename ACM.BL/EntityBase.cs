@@ -50,7 +50,24 @@ namespace ACM.BL
         {
 
             this.Validate();
-            //Code to store object in Database goes here. Won't actually implement as this is a sample code demonstrating understanding
+
+            //Code to store object in Database goes here.
+            //If the product has not changed and is not valid then it won't save
+           
+            //SQL Query goes here to read in a changes flag from database. If 'Y' then set HasChanges to true and commence with the code, otherwise skip
+            if (this.HasChanges)
+            {
+                //Do some processing here to check against the database to see if the object exists. If not then set the IsNew flag to 'true' and commence with code
+                IsNew = true;
+                if (this.IsNew)
+                {
+                    //Call an Insert Stored Procedure
+                }
+                else
+                {
+                    //Call an Update Stored Procedure
+                }
+            }
 
         }
 
