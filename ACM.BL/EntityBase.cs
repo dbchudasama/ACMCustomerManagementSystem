@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data.Entity;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -12,8 +13,9 @@ namespace ACM.BL
         Deleted
     }
 
-    //Base class so no instance of this class should be created hence making it abstract
-    public abstract class EntityBase
+	//Base class so no instance of this class should be created hence making it abstract. Making use of DbContext which is the primary class that is responsible for interacting with data as 
+	//objects. DbContext is part of the Entity Framework. Will use DbContext to Query the database
+	public abstract class EntityBase : DbContext
     {
         //Defines if the item is active or deleted
         public EntityStateOption EntityState { get; set; }
@@ -46,8 +48,14 @@ namespace ACM.BL
         //relevant class files
         public abstract bool Validate();
 
+		protected virtual void PreWriteRecord()
+		{
+
+		}
+
         public void Save()
         {
+			this.PreWriteRecord();
 
             this.Validate();
 

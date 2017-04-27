@@ -1,13 +1,16 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data.Entity;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Data.Entity;
 
 namespace ACM.BL
 {
-    public class Customer : EntityBase
-    {
+	
+    public class Customer : EntityBase 
+	{
         //Private as no access to this
         private AddressRepository addressRepository { get; set; }
 
@@ -16,7 +19,7 @@ namespace ACM.BL
             //: this(0)//Constructor chanining
         {
             //New Guid (Mixed character and digit number) allocation
-            this.ID = Guid.NewGuid();
+            //this.ID = Guid.NewGuid();
 
             //'this' refers to the current instance of the customer object being used
             //this.CustomerId = customerId;
@@ -26,9 +29,10 @@ namespace ACM.BL
 
         //Addresss
         public List<Address> AddressList { get; set; }
-        
-        //Customer ID variable
-        public int CustomerId { get; set; }
+
+		//Customer ID variable
+		
+		public int CustomerId { get; set; }
 
         //Customer type variable
         public int CustomerType { get; set; }
@@ -44,35 +48,43 @@ namespace ACM.BL
 
         //Email address property
         public string EmailAddress { get; set; }
-        
-        //Customer ID property - Here limiting the set command so that only I can set this property. No code outside this class can set this property
-        //as this is a key property
-       // public int CustomerId { get; private set; }
 
-        //Fullname of customer. No setter only a getter as nothing should be able to change the value of this property
-        public string FullName
-        {
-            get
-            {
-                //Adding in logic to test for whether ',' is needed if first or last name is empty (For automated testing code to pass)
-                string fullname = FirstName;
-                //If the last name is populated
-                if (!string.IsNullOrWhiteSpace(LastName))
-                {
-                    //If the first name is populated
-                    if (!string.IsNullOrWhiteSpace(fullname))
-                    {
-                        //Add a comma after it
-                        fullname += ", ";
-                    }
-                    //Now add the Last name
-                    fullname += LastName;
-                }
+		//Customer ID property - Here limiting the set command so that only I can set this property. No code outside this class can set this property
+		//as this is a key property
+		// public int CustomerId { get; private set; }
 
-                //Return the fullname - First Name + Last Name
-                return fullname;
-            }
-        }
+		protected override void PreWriteRecord()
+		{
+			base.PreWriteRecord();
+
+			FullName = this.GenerateFullName();
+		}
+
+
+		//Fullname of customer. No setter only a getter as nothing should be able to change the value of this property
+		public string FullName { get; private set; }
+
+		private string GenerateFullName()
+		{
+			//Adding in logic to test for whether ',' is needed if first or last name is empty (For automated testing code to pass)
+			string fullname = FirstName;
+			//If the last name is populated
+			if (!string.IsNullOrWhiteSpace(LastName))
+			{
+				//If the first name is populated
+				if (!string.IsNullOrWhiteSpace(fullname))
+				{
+					//Add a comma after it
+					fullname += ", ";
+				}
+				//Now add the Last name
+				fullname += LastName;
+			}
+
+			//Return the fullname - First Name + Last Name
+			return fullname;
+		}
+
 
         //Method 'Validate' to make sure name is valid
         public override bool Validate()
@@ -85,7 +97,7 @@ namespace ACM.BL
         public Customer CreateCustomer(Customer c)
         {
             //Building customer
-            CustomerId = 1;
+            //CustomerId = 1;
             CustomerType = 1; //Here customer type refers to 'Business', 'Government', 'Standard' etc. Assume here 1 means 'Standard'
             EmailAddress = "divyesh@me.com";
             FirstName = "Divyesh";
