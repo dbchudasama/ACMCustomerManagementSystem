@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ACM.BL.DB.Entities;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -6,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace ACM.BL
 {
-    public class OrderDisplay
+    public class OrderDisplay : IEntity
     {
         public string FirstName { get; set; }
         public string LastName { get; set; }
@@ -14,5 +15,10 @@ namespace ACM.BL
         public List<OrderDisplayItem> orderDisplayItemList { get; set; }
         public int OrderId { get; set; }
         public Address ShippingAddress { get; set; }
+
+        public bool Validate()
+        {
+            return true;
+        }
     }
 }

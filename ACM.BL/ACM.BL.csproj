@@ -5,7 +5,7 @@
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProjectGuid>{6D899C49-A673-4A3C-920B-1EB9382AF1F1}</ProjectGuid>
-    <OutputType>Library</OutputType>
+    <OutputType>Exe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>ACM.BL</RootNamespace>
     <AssemblyName>ACM.BL</AssemblyName>
@@ -29,12 +29,18 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject />
+  </PropertyGroup>
   <ItemGroup>
     <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
       <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.dll</HintPath>
     </Reference>
     <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
       <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=10.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.10.0.2\lib\net45\Newtonsoft.Json.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
@@ -47,19 +53,26 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Address.cs" />
-    <Compile Include="AddressRepository.cs" />
-    <Compile Include="Class1.cs" />
-    <Compile Include="Customer.cs" />
-    <Compile Include="CustomerRepository.cs" />
-    <Compile Include="EntityBase.cs" />
-    <Compile Include="Order.cs" />
-    <Compile Include="OrderDisplay.cs" />
-    <Compile Include="OrderDisplayItem.cs" />
-    <Compile Include="OrderItem.cs" />
-    <Compile Include="OrderRepository.cs" />
-    <Compile Include="Product.cs" />
-    <Compile Include="ProductRepository.cs" />
+    <Compile Include="CRM\Datastore\DBDatastore.cs" />
+    <Compile Include="CRM\Datastore\DB\Repository\Addresses.cs" />
+    <Compile Include="CRM\Datastore\DB\Entity\Address.cs" />
+    <Compile Include="CRM\Datastore\IDatastore.cs" />
+    <Compile Include="CRM\Datastore\DB\Repository\AddressRepository.cs" />
+    <Compile Include="CRM\Datastore\DB\Entity\Customer.cs" />
+    <Compile Include="CRM\Datastore\DB\Repository\CustomerRepository.cs" />
+    <Compile Include="CRM\Datastore\DB\ACMDBContext.cs" />
+    <Compile Include="CRM\Datastore\DB\Entity\EntityBase.cs" />
+    <Compile Include="CRM\Datastore\DB\Entity\IEntity.cs" />
+    <Compile Include="CRM\Datastore\DB\Entity\Order.cs" />
+    <Compile Include="CRM\Datastore\DB\Entity\OrderDisplay.cs" />
+    <Compile Include="CRM\Datastore\DB\Repository\ICRMRepository.cs" />
+    <Compile Include="CRM\Datastore\IRepository.cs" />
+    <Compile Include="CRM\Datastore\DB\Entity\OrderDisplayItem.cs" />
+    <Compile Include="CRM\Datastore\DB\Entity\OrderItem.cs" />
+    <Compile Include="CRM\Datastore\DB\Repository\OrderRepository.cs" />
+    <Compile Include="CRM\Datastore\DB\Entity\Product.cs" />
+    <Compile Include="CRM\Datastore\DB\Repository\ProductRepository.cs" />
+    <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup />

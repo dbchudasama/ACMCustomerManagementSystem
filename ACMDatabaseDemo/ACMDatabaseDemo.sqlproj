@@ -59,17 +59,10 @@
   <Import Condition="'$(SQLDBExtensionsRefPath)' == ''" Project="$(MSBuildExtensionsPath)\Microsoft\VisualStudio\v$(VisualStudioVersion)\SSDT\Microsoft.Data.Tools.Schema.SqlTasks.targets" />
   <ItemGroup>
     <Folder Include="Properties" />
-    <Folder Include="Security\" />
-    <Folder Include="Server Objects\" />
     <Folder Include="dbo\" />
     <Folder Include="dbo\Tables\" />
   </ItemGroup>
   <ItemGroup>
-    <Build Include="Security\sa.sql" />
-    <Build Include="Security\DESKTOP-TNQFVVR_gujra.sql" />
-    <Build Include="Security\NT SERVICE_SQLWriter.sql" />
-    <Build Include="Security\RoleMemberships.sql" />
-    <Build Include="Server Objects\AlwaysOn_health.sql" />
     <Build Include="dbo\Tables\Product.sql" />
     <Build Include="dbo\Tables\Order.sql" />
     <Build Include="dbo\Tables\Customer.sql" />

@@ -8,7 +8,7 @@ namespace ACM.BL
 {
     public class CustomerRepository
     {
-        //Method 'Save' to save the defined customer
+       /* //Method 'Save' to save the defined customer
         private void Save(Customer c)
         {
             c.Save(); //Invoking Save Method
@@ -39,6 +39,6 @@ namespace ACM.BL
         public static List<Customer> LoadManyCustomers(string filter)
         {
             return new List<Customer>();
-        }
+        }*/
     }
 }

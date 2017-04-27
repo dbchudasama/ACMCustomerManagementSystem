@@ -7,7 +7,7 @@ namespace ACM.BLTest
     [TestClass]
     public class CustomerTest
     {
-        [TestMethod]
+       /* [TestMethod]
         public void FullNameTestValid()
         {
             //Arrange - Initialised variables
@@ -80,7 +80,7 @@ namespace ACM.BLTest
 
             //Assert - Instance count should be equal to '3'
             Assert.AreEqual(3, Customer.InstanceCount);
-        }
+        }*/
 
         /*
         [TestMethod]

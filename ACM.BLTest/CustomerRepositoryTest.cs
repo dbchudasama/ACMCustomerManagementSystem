@@ -8,7 +8,7 @@ namespace ACM.BLTest
     [TestClass]
     public class CustomerRepositoryTest
     {
-        [TestMethod]
+       /* [TestMethod]
         public void RetrievingExisting()
         {
             //Arrange
@@ -84,6 +84,6 @@ namespace ACM.BLTest
                 Assert.AreEqual(expected.AddressList[i].Country, actual.AddressList[i].Country);
                 Assert.AreEqual(expected.AddressList[i].PostalCode, actual.AddressList[i].PostalCode);
             }
-        }
+        }*/
     }
 }

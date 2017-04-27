@@ -8,7 +8,7 @@ namespace ACM.BL
 {
     public class ProductRepository
     {
-        //Method 'Save' to save the defined product   
+       /* //Method 'Save' to save the defined product   
         public void Save(Product p)
         {
             p.Save(); //Invoking the Save method on Product
@@ -42,6 +42,6 @@ namespace ACM.BL
         public static List<Product> LoadManyProducts(string filter)
         {
             return new List<Product>();
-        }
+        }*/
     }
 }
