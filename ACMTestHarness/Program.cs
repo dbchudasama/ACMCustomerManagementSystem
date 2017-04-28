@@ -7,8 +7,40 @@ using ACM.BL;
 
 namespace ACMTestHarness
 {
-	class Program
+	static class Program
 	{
+
+		public static void Run(ACM.BL.Prototype.RepositoryBase ctx)
+		{
+
+			Customer c1 = new Customer();
+
+			String a, b, c, d, e;
+
+			Console.WriteLine("Please Enter the Customer's First Name:");
+			a = Console.ReadLine();
+			c1.FirstName = a;
+
+			Console.WriteLine("Please Enter the Customer's Last Name:");
+			b = Console.ReadLine();
+			c1.LastName = b;
+
+			Console.WriteLine("Please Enter the Customer Type - 1 = Standard, 2 = Business, 3 = Premium:");
+			c = Console.ReadLine();
+			//Need to convert input value to 'int'
+			//c1.CustomerType =;
+
+			Console.WriteLine("Please Enter the Customer's Email Address:");
+			d = Console.ReadLine();
+
+			
+			//Console.WriteLine("Thank you" + );
+
+
+
+
+
+		}
 		static void Main(string[] args)
 		{
 			//Single Entity Entry ONLY 

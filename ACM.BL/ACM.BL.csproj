@@ -54,7 +54,6 @@
     <Compile Include="Prototype\IRepository.cs" />
     <Compile Include="Prototype\IRepositoryBase.cs" />
     <Compile Include="Prototype\Order.cs" />
-    <Compile Include="Prototype\OrderDisplay.cs" />
     <Compile Include="Prototype\RepositoryBase.cs" />
     <Compile Include="Repository\AddressRepository.cs" />
     <Compile Include="Class1.cs" />

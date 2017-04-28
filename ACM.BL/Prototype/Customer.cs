@@ -61,7 +61,7 @@ namespace ACM.BL.Prototype
 			base.ValidateBase(c);
 		}
 
-		private string GenerateFullName()
+		public string GenerateFullName()
 		{
 			//Adding in logic to test for whether ',' is needed if first or last name is empty (For automated testing code to pass)
 			string fullname = FirstName;
