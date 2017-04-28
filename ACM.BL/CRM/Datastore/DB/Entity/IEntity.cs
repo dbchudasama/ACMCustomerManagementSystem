@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace ACM.BL.DB.Entities
 {
-    interface IEntity
+    public interface IEntity
     {
         bool Validate();
     }

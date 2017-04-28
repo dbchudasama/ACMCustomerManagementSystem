@@ -65,8 +65,7 @@
     <Compile Include="CRM\Datastore\DB\Entity\IEntity.cs" />
     <Compile Include="CRM\Datastore\DB\Entity\Order.cs" />
     <Compile Include="CRM\Datastore\DB\Entity\OrderDisplay.cs" />
-    <Compile Include="CRM\Datastore\DB\Repository\ICRMRepository.cs" />
-    <Compile Include="CRM\Datastore\IRepository.cs" />
+    <Compile Include="CRM\Datastore\DB\Repository\IRepository.cs" />
     <Compile Include="CRM\Datastore\DB\Entity\OrderDisplayItem.cs" />
     <Compile Include="CRM\Datastore\DB\Entity\OrderItem.cs" />
     <Compile Include="CRM\Datastore\DB\Repository\OrderRepository.cs" />
