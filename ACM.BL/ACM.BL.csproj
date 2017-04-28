@@ -47,20 +47,28 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Address.cs" />
-    <Compile Include="AddressRepository.cs" />
+    <Compile Include="Entity\Address.cs" />
+    <Compile Include="IRepository.cs" />
+    <Compile Include="Prototype\Address.cs" />
+    <Compile Include="Prototype\Customer.cs" />
+    <Compile Include="Prototype\IRepository.cs" />
+    <Compile Include="Prototype\IRepositoryBase.cs" />
+    <Compile Include="Prototype\Order.cs" />
+    <Compile Include="Prototype\OrderDisplay.cs" />
+    <Compile Include="Prototype\RepositoryBase.cs" />
+    <Compile Include="Repository\AddressRepository.cs" />
     <Compile Include="Class1.cs" />
-    <Compile Include="Customer.cs" />
+    <Compile Include="Entity\Customer.cs" />
     <Compile Include="ACMDBEntities.cs" />
-    <Compile Include="CustomerRepository.cs" />
-    <Compile Include="EntityBase.cs" />
-    <Compile Include="Order.cs" />
-    <Compile Include="OrderDisplay.cs" />
-    <Compile Include="OrderDisplayItem.cs" />
-    <Compile Include="OrderItem.cs" />
-    <Compile Include="OrderRepository.cs" />
-    <Compile Include="Product.cs" />
-    <Compile Include="ProductRepository.cs" />
+    <Compile Include="Repository\CustomerRepository.cs" />
+    <Compile Include="Entity\Order.cs" />
+    <Compile Include="Entity\OrderDisplay.cs" />
+    <Compile Include="Entity\OrderDisplayItem.cs" />
+    <Compile Include="Entity\OrderItem.cs" />
+    <Compile Include="Repository\IRepository.cs" />
+    <Compile Include="Repository\OrderRepository.cs" />
+    <Compile Include="Entity\Product.cs" />
+    <Compile Include="Repository\ProductRepository.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup />

@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace ACM.BL
 {
-    public class Address : EntityBase
+    public class Address : DBDatastore
     {
         public int AddressId { get; private set; }
         public int AddressType { get; set; }

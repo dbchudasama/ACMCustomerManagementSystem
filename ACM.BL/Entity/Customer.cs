@@ -9,7 +9,7 @@ using System.Data.Entity;
 namespace ACM.BL
 {
 	
-    public class Customer : EntityBase 
+    public class Customer : DBDatastore 
 	{
         //Private as no access to this
         private AddressRepository addressRepository { get; set; }

@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace ACM.BL
 {
-    public class Product : EntityBase //Inheritance
+    public class Product : DBDatastore //Inheritance
     {
         //Nullable value type. 
         public Decimal? CurrentPrice { get; set; }

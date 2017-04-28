@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace ACM.BL
 {
-    public class Order : EntityBase
+    public class Order : DBDatastore
     {
         public int CustomerId { get; set; }
         public int ShippingAddressId { get; set; }
