@@ -10,6 +10,7 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace ACM.BL
 {
+	/*
 	//Context class for the Customer Table 
 	public partial class ACMDBEntities : DbContext
 	{
@@ -39,4 +40,5 @@ namespace ACM.BL
 		public virtual DbSet<Product> Products { get; set; }
 		public virtual DbSet<Order> Orders { get; set; }
 	}
+	*/
 }

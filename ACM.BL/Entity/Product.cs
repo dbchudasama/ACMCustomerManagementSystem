@@ -6,7 +6,8 @@ using System.Threading.Tasks;
 
 namespace ACM.BL
 {
-    public class Product : DBDatastore //Inheritance
+	/*
+    public class Product
     {
         //Nullable value type. 
         public Decimal? CurrentPrice { get; set; }
@@ -38,8 +39,7 @@ namespace ACM.BL
             if (CurrentPrice == null) isValid = false;
             
             return isValid;
-        }
-
-        
+        } 
     }
+	*/
 }

@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ACM.BL.Prototype
+namespace MainProgram.Prototype
 {
 	/*
 	public class Order : RepositoryBase, IRepository

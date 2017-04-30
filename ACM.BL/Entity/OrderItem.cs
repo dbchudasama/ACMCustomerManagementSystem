@@ -6,7 +6,8 @@ using System.Threading.Tasks;
 
 namespace ACM.BL
 {
-    public class OrderItem : DBDatastore
+	/*
+    public class OrderItem
     {
         public int OrderItemId { get; private set; }
         public int OrderQuantity { get; set; }
@@ -41,6 +42,7 @@ namespace ACM.BL
             return (OrderQuantity <= 0 || ProductId <= 0 || PurchasePrice == null) ? false : true;
         }
     }
+	*/
 }
 
 

@@ -6,8 +6,9 @@ using System.Threading.Tasks;
 
 namespace ACM.BL
 {
-    public class Address : DBDatastore
+    public class Address 
     {
+		/*
         public int AddressId { get; private set; }
         public int AddressType { get; set; }
         public string StreetLine1 { get; set; }
@@ -63,5 +64,6 @@ namespace ACM.BL
 
                                         };
         }
+		*/
     }
 }

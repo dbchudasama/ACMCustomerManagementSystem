@@ -5,19 +5,19 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ACM.BL.Prototype
+namespace MainProgram.Prototype
 {
 	//Needs to be a generic class that can take argument of type 'anything'. DBContext code needs to go in here.
 	public class RepositoryBase : DbContext, IRepositoryBase<Customer>
 	{
 		public DbSet<Customer> Customers { get; set; }
-		public DbSet<Address> Addresses { get; set; }
+		//public DbSet<Address> Addresses { get; set; }
 		//public DbSet<Order> Orders { get; set; }
 		//public DbSet<Product> Products { get; set; }
 
 		//Passing in class name into base constructor
 		public RepositoryBase()
-			: base("name=ACMTest")
+			: base("name=MPTest")
 		{
 
 		}

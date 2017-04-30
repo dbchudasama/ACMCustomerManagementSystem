@@ -6,7 +6,8 @@ using System.Threading.Tasks;
 
 namespace ACM.BL
 {
-    public class Order : DBDatastore
+	/*
+    public class Order 
     {
         public int CustomerId { get; set; }
         public int ShippingAddressId { get; set; }
@@ -33,4 +34,5 @@ namespace ACM.BL
             return isValid;
         }
     }
+	*/
 }

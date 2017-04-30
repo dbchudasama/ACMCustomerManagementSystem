@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 
 namespace ACM.BL
 {
+	/*
     public class AddressRepository
     {
         //Method to save current address
@@ -40,4 +41,5 @@ namespace ACM.BL
             return new List<Address>();
         }
     }
+	*/
 }

@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ACM.BL.Prototype
+namespace MainProgram.Prototype
 {
 	public class Customer : RepositoryBase, IRepository
 	{
@@ -12,7 +12,7 @@ namespace ACM.BL.Prototype
 		public int CustomerId { get; set; }
 
 		//Customer type variable
-		public int CustomerType { get; set; }
+		public string CustomerType { get; set; }
 
 		//Last Name property
 		public string LastName { get; set; }
@@ -26,15 +26,12 @@ namespace ACM.BL.Prototype
 		//Fullname of customer. No setter only a getter as nothing should be able to change the value of this property
 		public string FullName { get; private set; }
 
-		Customer c = new Customer();
-		
-
 		public void Add()
 		{
 			//Logic in here to add a record to database
 
 			//Calls RepositoryBase Add method, this way the correct type is passed in
-			base.AddBase(c);
+			base.AddBase(this);
 		}
 
 		public void GetAll()
@@ -54,12 +51,12 @@ namespace ACM.BL.Prototype
 
 		public void Save()
 		{
-			base.SaveBase(c);
+			base.SaveBase(this);
 		}
 
 		public void Validate()
 		{
-			base.ValidateBase(c);
+			base.ValidateBase(this);
 		}
 
 		public string GenerateFullName(string firstName, string lastName)

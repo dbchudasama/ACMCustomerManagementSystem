@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 
 namespace ACM.BL
 {
+	/*
 	//Repository Interface to use with repository files
 	interface IRepository<T>
 	{
@@ -22,5 +23,6 @@ namespace ACM.BL
 		}
 	
 	}
+	*/
 
 }

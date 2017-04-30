@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 
 namespace ACM.BL
 {
+	/*
     public class CustomerRepository
     {
         //Method 'Save' to save the defined customer
@@ -41,4 +42,5 @@ namespace ACM.BL
             return new List<Customer>();
         }
     }
+	*/
 }

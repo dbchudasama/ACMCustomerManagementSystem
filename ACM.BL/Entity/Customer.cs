@@ -4,15 +4,15 @@ using System.Data.Entity;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using System.Data.Entity;
 
 namespace ACM.BL
 {
 	
-    public class Customer : DBDatastore 
+    public class Customer
 	{
+		
         //Private as no access to this
-        private AddressRepository addressRepository { get; set; }
+        //private AddressRepository addressRepository { get; set; }
 
         //Constructor overloaading for Customer Class
         public Customer()
@@ -24,7 +24,7 @@ namespace ACM.BL
             //'this' refers to the current instance of the customer object being used
             //this.CustomerId = customerId;
             AddressList = new List<Address>();
-            addressRepository = new AddressRepository();
+            //addressRepository = new AddressRepository();
         }
 
         //Addresss
@@ -49,10 +49,34 @@ namespace ACM.BL
         //Email address property
         public string EmailAddress { get; set; }
 
+
+		public string GenerateFullName(string firstName, string lastName)
+		{
+			//Adding in logic to test for whether ',' is needed if first or last name is empty (For automated testing code to pass)
+			string fullname = firstName;
+			//If the last name is populated
+			if (!string.IsNullOrWhiteSpace(lastName))
+			{
+				//If the first name is populated
+				if (!string.IsNullOrWhiteSpace(fullname))
+				{
+					//Add a comma after it
+					fullname += ", ";
+				}
+				//Now add the Last name
+				fullname += lastName;
+			}
+
+			//Return the fullname - First Name + Last Name
+			return fullname;
+		}
+
+
 		//Customer ID property - Here limiting the set command so that only I can set this property. No code outside this class can set this property
 		//as this is a key property
 		// public int CustomerId { get; private set; }
 
+		/*
 		protected override void PreWriteRecord()
 		{
 			base.PreWriteRecord();
@@ -107,5 +131,7 @@ namespace ACM.BL
 
             return c;
         }
-    }
+		*/
+
+	}
 }
