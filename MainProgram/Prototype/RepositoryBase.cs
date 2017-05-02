@@ -27,6 +27,10 @@ namespace MainProgram.Prototype
 			if (c == null)
 				return;
 
+			this.AddBase(c);
+
+			//this.SaveChanges();
+
 			using (var ctx = new RepositoryBase())
 			{
 				//Add Customer object into Customers DBSet

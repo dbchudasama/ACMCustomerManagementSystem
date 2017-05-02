@@ -8,7 +8,7 @@ namespace MainProgram.Prototype
 {
 	class Program
 	{
-		public static void Run(RepositoryBase ctx)
+		public static void Run()
 		{
 
 			Customer c1 = new Customer();
@@ -47,14 +47,11 @@ namespace MainProgram.Prototype
 
 		static void Main(string[] args)
 		{
+				Program.Run();
 
-			using (var ctx = new RepositoryBase())
-			{
-				Program.Run(ctx);
-			}
 			Console.WriteLine("Press any key to stop...");
 			Console.ReadKey();
-
+			
 		}
 	}
 }
